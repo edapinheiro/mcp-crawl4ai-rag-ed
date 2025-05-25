@@ -30,10 +30,16 @@ services:
       # --- Configuração do Supabase (apontando para sua instância externa) ---
       # Substitua pela URL do seu projeto Supabase.
       # No EasyPanel, configure esta variável no painel.
+      # For the Supabase version (sample_supabase_agent.py), set your Supabase URL and Service Key.
+      # Get your SUPABASE_URL from the API section of your Supabase project settings -
+      # https://supabase.com/dashboard/project/<your project ID>/settings/api
       SUPABASE_URL: 'SUA_URL_DO_PROJETO_SUPABASE_AQUI'
 
       # Substitua pela sua chave de serviço (service_role key) do Supabase.
       # No EasyPanel, configure esta variável no painel.
+      # Get your SUPABASE_SERVICE_KEY from the API section of your Supabase project settings -
+      # https://supabase.com/dashboard/project/<your project ID>/settings/api
+      # On this page it is called the service_role secret.
       SUPABASE_SERVICE_KEY: 'SUA_SUPABASE_SERVICE_KEY_AQUI'
 
     # Política de reinício. 'unless-stopped' reinicia o contêiner
