@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   mcp-crawl4ai-rag:
     # 'build: .' indica que o Docker Compose deve construir uma imagem
