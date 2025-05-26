@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "crawl4ai-rag": {
+      "command": "/Users/edpiinheiro/.local/bin/uv",
+      "args": ["run", "src/crawl4ai_mcp.py"],
+      "cwd": "/Users/edpiinheiro/Documents/GitHub/mcp-crawl4ai-rag-ed",
+      "env": {
+        "TRANSPORT": "stdio"
+      }
+    }
+  }
+}

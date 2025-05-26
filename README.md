@@ -194,6 +194,52 @@ Add this server to your MCP configuration for Claude Desktop, Windsurf, or any o
 }
 ```
 
+### Cursor IDE Configuration
+
+For Cursor IDE, you have two options:
+
+#### Option 1: Using the provided configuration file
+1. The project includes a `.cursor/mcp_settings.json` file
+2. Update the environment variables with your API keys:
+   ```json
+   {
+     "mcpServers": {
+       "crawl4ai-rag": {
+         "command": "uv",
+         "args": ["run", "src/crawl4ai_mcp.py"],
+         "cwd": "/path/to/your/project",
+         "env": {
+           "TRANSPORT": "stdio",
+           "OPENAI_API_KEY": "your_openai_api_key",
+           "SUPABASE_URL": "your_supabase_url",
+           "SUPABASE_SERVICE_KEY": "your_supabase_service_key"
+         }
+       }
+     }
+   }
+   ```
+3. Update the `cwd` path to match your project location
+4. Cursor will automatically detect and use this configuration
+
+#### Option 2: Manual Cursor settings
+Add this to your Cursor settings (Cmd/Ctrl + , → Extensions → MCP):
+```json
+{
+  "mcpServers": {
+    "crawl4ai-rag": {
+      "command": "uv",
+      "args": ["run", "src/crawl4ai_mcp.py"],
+      "cwd": "/path/to/your/project",
+      "env": {
+        "TRANSPORT": "stdio",
+        "OPENAI_API_KEY": "your_openai_api_key",
+        "SUPABASE_URL": "your_supabase_url",
+        "SUPABASE_SERVICE_KEY": "your_supabase_service_key"
+      }
+    }
+  }
+}
+
 ### Docker with Stdio Configuration
 
 ```json

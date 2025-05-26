@@ -1,0 +1,45 @@
+🚀 Configurando MCP Crawl4AI para Cursor IDE...
+📄 Log sendo salvo em: setup_cursor.log
+⏰ Iniciado em: Dom Jan 26 10:30:45 BRT 2025
+===========================================
+🔍 Verificando instalação do uv...
+✅ uv encontrado!
+uv 0.5.7
+🔍 Verificando arquivo .env...
+✅ Arquivo .env encontrado!
+📋 Configurações encontradas:
+HOST=***
+PORT=***
+TRANSPORT=***
+OPENAI_API_KEY=***
+SUPABASE_URL=***
+SUPABASE_SERVICE_KEY=***
+📦 Instalando dependências...
+Resolved 47 packages in 1.23s
+   Built mcp-crawl4ai @ file:///Users/edpiinheiro/Documents/GitHub/mcp-crawl4ai-rag-ed
+Prepared 1 package in 2.31s
+Installed 1 package in 15ms
+ + mcp-crawl4ai==0.1.0 (from file:///Users/edpiinheiro/Documents/GitHub/mcp-crawl4ai-rag-ed)
+✅ Dependências instaladas com sucesso!
+🕷️ Configurando Crawl4AI...
+[INFO] 🌟 Crawl4AI setup completed successfully!
+✅ Crawl4AI configurado com sucesso!
+🧪 Testando o servidor MCP...
+🚀 Iniciando servidor de teste...
+🔄 Aguardando inicialização do servidor (PID: 12345)...
+✅ Servidor MCP está funcionando!
+🛑 Parando servidor de teste...
+✅ Servidor de teste parado com sucesso!
+===========================================
+🎯 Configuração concluída com sucesso!
+⏰ Finalizado em: Dom Jan 26 10:31:15 BRT 2025
+📝 Próximos passos:
+1. ✅ Dependências instaladas
+2. ✅ Crawl4AI configurado
+3. ✅ Servidor MCP testado
+4. 🔄 Execute o SQL em crawled_pages.sql no seu Supabase
+5. 🔄 Reinicie o Cursor IDE
+6. 🔄 Verifique se o MCP aparece nas ferramentas disponíveis
+
+📄 Log completo salvo em: setup_cursor.log
+🆘 Se houver problemas, consulte CURSOR_SETUP.md
