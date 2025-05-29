@@ -46,6 +46,14 @@ services:
     # automaticamente a menos que ele tenha sido parado manualmente.
     restart: unless-stopped
 
+    # Adicionando persistência com volume
+    volumes:
+      - mcp_data:/app/data  # ajuste /app/data para o caminho usado pela sua aplicação
+
+    # Definição do volume (persistente)
+    volumes:
+      mcp_data:
+
     # Opcional: Se você tiver um arquivo .env na raiz do seu projeto
     # (ao lado do Dockerfile e docker-compose.yml) e quiser que
     # o Docker Compose carregue variáveis dele, descomente as linhas abaixo.
