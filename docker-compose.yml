@@ -13,7 +13,7 @@ services:
       TRANSPORT: 'sse'
       OPENAI_API_KEY: ${OPENAI_API_KEY}
       SUPABASE_URL: ${SUPABASE_URL}
-      SUPABASE_SERVICE_KEY: ${SUPABASE_SERVICE_KEY}
+      SUPABASE_SERVICE_KEY: ${SUPABASE_SERVICE_KEY} ##
     restart: unless-stopped
     volumes:
       - mcp_data:/app/data
