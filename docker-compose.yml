@@ -1,63 +1,21 @@
+version: '3.8'
+
 services:
   mcp-crawl4ai-rag:
-    # 'build: .' indica que o Docker Compose deve construir uma imagem
-    # usando o Dockerfile localizado no mesmo diretório que este
-    # arquivo docker-compose.yml.
     build: .
-   ## container_name: mcp_crawl4ai_rag_ed
-
-    # Mapeia a porta 8051 do contêiner para a porta 8051 da sua máquina host.
-    # Se a porta 8051 já estiver em uso no seu host EasyPanel, você pode mudar
-    # a parte do host (ex: "80:8051" para acessar na porta 80 do host).
+    container_name: mcp_crawl4ai_rag_ed
     ports:
       - "8051:8051"
-
-    # Variáveis de ambiente necessárias para a aplicação.
-    # É ALTAMENTE RECOMENDADO configurar os valores sensíveis (chaves de API)
-    # diretamente na interface do EasyPanel como segredos, em vez de
-    # colocá-los diretamente neste arquivo.
     environment:
-      # --- Configuração do Servidor MCP ---
-      HOST: '0.0.0.0' # Permite que o servidor aceite conexões de qualquer IP
-      PORT: '8051'    # Porta em que a aplicação rodará dentro do contêiner
-      TRANSPORT: 'sse'  # Ou 'stdio', dependendo da configuração desejada
-
-      # --- Configuração da API OpenAI ---
-      # Substitua por sua chave de API da OpenAI.
-      # No EasyPanel, configure esta variável no painel.
+      HOST: '0.0.0.0'
+      PORT: '8051'
+      TRANSPORT: 'sse'
       OPENAI_API_KEY: 'SUA_OPENAI_API_KEY_AQUI'
-
-      # --- Configuração do Supabase (apontando para sua instância externa) ---
-      # Substitua pela URL do seu projeto Supabase.
-      # No EasyPanel, configure esta variável no painel.
-      # For the Supabase version (sample_supabase_agent.py), set your Supabase URL and Service Key.
-      # Get your SUPABASE_URL from the API section of your Supabase project settings -
-      # https://supabase.com/dashboard/project/<your project ID>/settings/api
       SUPABASE_URL: 'SUA_URL_DO_PROJETO_SUPABASE_AQUI'
-
-      # Substitua pela sua chave de serviço (service_role key) do Supabase.
-      # No EasyPanel, configure esta variável no painel.
-      # Get your SUPABASE_SERVICE_KEY from the API section of your Supabase project settings -
-      # https://supabase.com/dashboard/project/<your project ID>/settings/api
-      # On this page it is called the service_role secret.
       SUPABASE_SERVICE_KEY: 'SUA_SUPABASE_SERVICE_KEY_AQUI'
-
-    # Política de reinício. 'unless-stopped' reinicia o contêiner
-    # automaticamente a menos que ele tenha sido parado manualmente.
     restart: unless-stopped
-
-    # Adicionando persistência com volume
     volumes:
-      - mcp_data:/app/data  # ajuste /app/data para o caminho usado pela sua aplicação
+      - mcp_data:/app/data
 
-    # Definição do volume (persistente)
-    volumes:
-      mcp_data:
-
-    # Opcional: Se você tiver um arquivo .env na raiz do seu projeto
-    # (ao lado do Dockerfile e docker-compose.yml) e quiser que
-    # o Docker Compose carregue variáveis dele, descomente as linhas abaixo.
-    # Contudo, para o EasyPanel, é geralmente melhor configurar as
-    # variáveis de ambiente diretamente na interface do painel.
-    # env_file:
-    #   - .env
+volumes:
+  mcp_data:
